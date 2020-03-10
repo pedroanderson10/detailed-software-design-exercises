@@ -1,0 +1,79 @@
+package br.com.ufc.pds.serpentesEscadas.casa;
+
+import java.util.ArrayList;
+
+public class CasaController implements iCasaController{
+    
+    private ArrayList<iCasa> listCasa = null;
+    private iFabricaCasa fabricaCasa = null;
+    private boolean caiuNaRand = false;
+    
+    public CasaController(){
+        fabricaCasa = new FabricaCasa();
+        listCasa = new ArrayList<>();
+        criaTodasNormal();
+    }
+    
+    ///////////////////////////////////////
+    //Metodos de set CasaEspecial na list//
+    ///////////////////////////////////////
+
+    @Override
+    public void setCasa(String nome,int indice, int destino){
+        listCasa.set(indice, fabricaCasa.criaCasa(nome, indice, destino));
+    }
+    
+    @Override
+    public void setCasa(String nome,int indice){
+        listCasa.set(indice, fabricaCasa.criaCasa(nome, indice));
+    }
+    
+    @Override
+    public void setCasa(String nome,int indice, iObservadorCasa obs){
+        listCasa.set(indice, fabricaCasa.criaCasa(nome, indice, obs));
+    }
+    
+    //////////////////////
+    // Metodos Get e Set//
+    //////////////////////
+    
+    public int getNumCasa(int indice){
+        return listCasa.get(indice).getNumCasa();
+    }
+    
+    @Override
+    public int getNumCasaDestino(int indice){
+        return listCasa.get(indice).getDestino();
+    }
+    
+    @Override
+    public iCasa getCasa(int indice){
+        return listCasa.get(indice);
+    }
+    
+    public ArrayList<iCasa> getListCasa(){
+        return listCasa;
+    }
+    
+    public void setListCasa(ArrayList<iCasa> listCasa){
+        this.listCasa = listCasa;
+    }
+    
+    public final void criaTodasNormal() {
+        for(int i = 0; i<100 ; i++)
+            listCasa.add(fabricaCasa.criaCasa("normal", i));
+    }
+
+    @Override
+    public boolean getCaiuNaRand(){
+        boolean ret = caiuNaRand;
+        caiuNaRand = false;
+        return ret;
+    }
+    
+    @Override
+    public void caiuNaRandom() {
+        caiuNaRand = true;
+    }
+    
+}

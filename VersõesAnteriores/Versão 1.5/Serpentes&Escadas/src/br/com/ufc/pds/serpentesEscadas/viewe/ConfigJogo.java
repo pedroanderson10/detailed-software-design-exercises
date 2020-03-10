@@ -1,0 +1,48 @@
+
+package br.com.ufc.pds.serpentesEscadas.viewe;
+
+import br.com.ufc.pds.serpentesEscadas.jogador.Jogador;
+import br.com.ufc.pds.serpentesEscadas.tabuleiro.iTabuleiroController;
+
+public class ConfigJogo implements iConfigJogo {
+    @Override
+    public iTabuleiroController definirCasas(iTabuleiroController ctrlTabuleiro){
+        ctrlTabuleiro.setListCasaNormal();
+        // 7 RANDOM
+        ctrlTabuleiro.setCasaRandom(3);
+        ctrlTabuleiro.setCasaRandom(20);
+        ctrlTabuleiro.setCasaRandom(25);
+        ctrlTabuleiro.setCasaRandom(51);
+        ctrlTabuleiro.setCasaRandom(71);
+        ctrlTabuleiro.setCasaRandom(79);
+        ctrlTabuleiro.setCasaRandom(85);
+        // 8 ESCADAS
+        ctrlTabuleiro.setCasaEscada(2, 36);
+        ctrlTabuleiro.setCasaEscada(5, 15);
+        ctrlTabuleiro.setCasaEscada(13, 31);
+        ctrlTabuleiro.setCasaEscada(26, 54);
+        ctrlTabuleiro.setCasaEscada(38, 42);
+        ctrlTabuleiro.setCasaEscada(40, 84);
+        ctrlTabuleiro.setCasaEscada(68, 86);
+        ctrlTabuleiro.setCasaEscada(88, 90);
+        // 7 COBRAS
+        ctrlTabuleiro.setCasaCobra(14, 8);
+        ctrlTabuleiro.setCasaCobra(41, 16);
+        ctrlTabuleiro.setCasaCobra(48, 11);
+        ctrlTabuleiro.setCasaCobra(56, 45);
+        ctrlTabuleiro.setCasaCobra(74, 46);
+        ctrlTabuleiro.setCasaCobra(87, 35);
+        ctrlTabuleiro.setCasaCobra(96, 64);
+        
+        return ctrlTabuleiro;
+    }
+    
+    @Override
+    public iTabuleiroController definirJogadores(iTabuleiroController ctrlTabuleiro){
+        ctrlTabuleiro.addJogador(new Jogador("Pedro"));
+        ctrlTabuleiro.addJogador(new Jogador("Lana"));
+        ctrlTabuleiro.addJogador(new Jogador("Ravi"));
+        return ctrlTabuleiro;
+    }
+}
+

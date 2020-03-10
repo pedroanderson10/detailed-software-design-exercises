@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="br.com.ufc.pds.serpentesEscadas.model">
+  <ClassDiagramComponents>
+    <Class name="Casa" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="posicao" type="Posicao" visibility="private"/>
+        <Field name="numCasa" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setPosicao" returnType="void" visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Method>
+        <Method name="getPosicao" returnType="Posicao" visibility="public"/>
+        <Method name="getNumCasa" returnType="int" visibility="public"/>
+        <Method name="setNumCasa" returnType="void" visibility="public">
+          <Argument type="int" name="numCasa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CasaEspecial" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="CasaEspGoTo" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" isAbstract="true" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="casaDestino" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="numCasa"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setCasaDestino" returnType="void" visibility="public">
+          <Argument type="int" name="destino"/>
+        </Method>
+        <Method name="getCasaDestino" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CasaEspGoToCobra" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="numCasa"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDestino" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CasaEspGoToEscada" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="numCasa"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+          <Argument type="int" name="casaDestino"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDestino" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CasaEspRandom" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDestino" returnType="int" visibility="public"/>
+        <Method name="getDestinoSorte" returnType="int" visibility="public"/>
+        <Method name="getDestinoReves" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CasaNormal" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numCasa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Posicao" name="p"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDestino" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CasaController" package="br.com.ufc.pds.serpentesEscadas.model.controller" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="listCasa" type="ArrayList&lt;Casa&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setCasaEscada" returnType="void" visibility="public">
+          <Argument type="int" name="indice"/>
+          <Argument type="int" name="destino"/>
+        </Method>
+        <Method name="setCasaRandom" returnType="void" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="setCasaCobra" returnType="void" visibility="public">
+          <Argument type="int" name="indice"/>
+          <Argument type="int" name="destino"/>
+        </Method>
+        <Method name="setCasaIndice" returnType="void" visibility="public">
+          <Argument type="Casa" name="casa"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="getNumCasa" returnType="int" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="getDestino" returnType="int" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="getCasa" returnType="Casa" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="getListCasa" returnType="ArrayList&lt;Casa&gt;" visibility="public"/>
+        <Method name="setListCasa" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Casa&gt;" name="listCasa"/>
+        </Method>
+        <Method name="addCasa" returnType="void" visibility="public">
+          <Argument type="Casa" name="casa"/>
+        </Method>
+        <Method name="setListCasaNormal" returnType="void" visibility="public"/>
+        <Method name="canAddCasa" returnType="boolean" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="JogadorController" package="br.com.ufc.pds.serpentesEscadas.model.controller" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="listJogador" type="ArrayList&lt;Jogador&gt;" visibility="private"/>
+        <Field name="indiceJogadorAtual" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addJogador" returnType="void" visibility="public">
+          <Argument type="Jogador" name="jogador"/>
+        </Method>
+        <Method name="getJogador" returnType="Jogador" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="setListJogador" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Jogador&gt;" name="listJogador"/>
+        </Method>
+        <Method name="getListJogador" returnType="ArrayList&lt;Jogador&gt;" visibility="public"/>
+        <Method name="getIndiceJogadorAtual" returnType="int" visibility="public"/>
+        <Method name="setIndiceJogadorAtual" returnType="void" visibility="public">
+          <Argument type="int" name="indiceJogador"/>
+        </Method>
+        <Method name="getJogadorAtual" returnType="Jogador" visibility="public"/>
+        <Method name="setCasaJogadorAtual" returnType="void" visibility="public">
+          <Argument type="Casa" name="casa"/>
+        </Method>
+        <Method name="getCasaJogadorAtual" returnType="Casa" visibility="public"/>
+        <Method name="getNumCasaJogadorAtual" returnType="int" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="int" name="indice"/>
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getCasaAtual" returnType="Casa" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="setCasaAtual" returnType="void" visibility="public">
+          <Argument type="int" name="indice"/>
+          <Argument type="Casa" name="casa"/>
+        </Method>
+        <Method name="getPosicao" returnType="Posicao" visibility="public">
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="setPosicao" returnType="void" visibility="public">
+          <Argument type="int" name="indice"/>
+          <Argument type="Posicao" name="posicao"/>
+        </Method>
+        <Method name="canAddJogador" returnType="boolean" visibility="private"/>
+        <Method name="nextJogador" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TabuleiroController" package="br.com.ufc.pds.serpentesEscadas.model.controller" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Dado" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getValorDado" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="iCasa" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Methods>
+        <Method name="getDestino" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="iCasaRandom" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Methods>
+        <Method name="getDestinoSorte" returnType="int" visibility="public"/>
+        <Method name="getDestinoReves" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Jogador" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="posicaoNoTabuleiro" type="Posicao" visibility="private"/>
+        <Field name="casaAtual" type="Casa" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="Posicao" name="posicaoNoTabuleiro"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIndiceCasaAtual" returnType="int" visibility="public"/>
+        <Method name="setPosicao" returnType="void" visibility="public">
+          <Argument type="Posicao" name="p"/>
+        </Method>
+        <Method name="getPosicao" returnType="Posicao" visibility="public"/>
+        <Method name="setCasaAtual" returnType="void" visibility="public">
+          <Argument type="Casa" name="c"/>
+        </Method>
+        <Method name="getCasaAtual" returnType="Casa" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Posicao" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="coordenada_X" type="int" visibility="private"/>
+        <Field name="coordenada_Y" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Tabuleiro" package="br.com.ufc.pds.serpentesEscadas.model" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="ctrlCasa" type="CasaController" visibility="private"/>
+        <Field name="ctrlJogador" type="JogadorController" visibility="private"/>
+        <Field name="dado" type="Dado" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="fazJogada" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.controller.JogadorController" target="br.com.ufc.pds.serpentesEscadas.model.Posicao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="casaAtual" source="br.com.ufc.pds.serpentesEscadas.model.Jogador" target="br.com.ufc.pds.serpentesEscadas.model.Casa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ctrlCasa" source="br.com.ufc.pds.serpentesEscadas.model.Tabuleiro" target="br.com.ufc.pds.serpentesEscadas.model.controller.CasaController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="posicao" source="br.com.ufc.pds.serpentesEscadas.model.Casa" target="br.com.ufc.pds.serpentesEscadas.model.Posicao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.Jogador" target="br.com.ufc.pds.serpentesEscadas.model.Posicao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.controller.CasaController" target="br.com.ufc.pds.serpentesEscadas.model.Casa" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.controller.JogadorController" target="br.com.ufc.pds.serpentesEscadas.model.Casa" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.controller.JogadorController" target="br.com.ufc.pds.serpentesEscadas.model.Jogador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="br.com.ufc.pds.serpentesEscadas.model.CasaEspRandom" target="br.com.ufc.pds.serpentesEscadas.model.iCasaRandom"/>
+    <HasRelation name="ctrlJogador" source="br.com.ufc.pds.serpentesEscadas.model.Tabuleiro" target="br.com.ufc.pds.serpentesEscadas.model.controller.JogadorController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.Jogador" target="br.com.ufc.pds.serpentesEscadas.model.Casa" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="br.com.ufc.pds.serpentesEscadas.model.CasaEspRandom" target="br.com.ufc.pds.serpentesEscadas.model.CasaEspecial"/>
+    <HasRelation name="listJogador" source="br.com.ufc.pds.serpentesEscadas.model.controller.JogadorController" target="br.com.ufc.pds.serpentesEscadas.model.Jogador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Jogador&gt;"/>
+    <HasRelation name="posicaoNoTabuleiro" source="br.com.ufc.pds.serpentesEscadas.model.Jogador" target="br.com.ufc.pds.serpentesEscadas.model.Posicao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="br.com.ufc.pds.serpentesEscadas.model.CasaEspGoToEscada" target="br.com.ufc.pds.serpentesEscadas.model.CasaEspGoTo"/>
+    <UseRelation source="br.com.ufc.pds.serpentesEscadas.model.Casa" target="br.com.ufc.pds.serpentesEscadas.model.Posicao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="br.com.ufc.pds.serpentesEscadas.model.Casa" target="br.com.ufc.pds.serpentesEscadas.model.iCasa"/>
+    <IsRelation name="is" source="br.com.ufc.pds.serpentesEscadas.model.CasaNormal" target="br.com.ufc.pds.serpentesEscadas.model.Casa"/>
+    <IsRelation name="is" source="br.com.ufc.pds.serpentesEscadas.model.CasaEspecial" target="br.com.ufc.pds.serpentesEscadas.model.Casa"/>
+    <HasRelation name="dado" source="br.com.ufc.pds.serpentesEscadas.model.Tabuleiro" target="br.com.ufc.pds.serpentesEscadas.model.Dado" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="br.com.ufc.pds.serpentesEscadas.model.CasaEspGoTo" target="br.com.ufc.pds.serpentesEscadas.model.CasaEspecial"/>
+    <HasRelation name="listCasa" source="br.com.ufc.pds.serpentesEscadas.model.controller.CasaController" target="br.com.ufc.pds.serpentesEscadas.model.Casa" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Casa&gt;"/>
+    <IsRelation name="is" source="br.com.ufc.pds.serpentesEscadas.model.CasaEspGoToCobra" target="br.com.ufc.pds.serpentesEscadas.model.CasaEspGoTo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
