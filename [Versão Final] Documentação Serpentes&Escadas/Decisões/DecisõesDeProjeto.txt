@@ -1,0 +1,33 @@
+	Projeto Detalhado de Software
+	
+		Decisões de Projeto
+				ETAPA 1
+	Primeiramente decidimos definir as entidades e seus respectivos controladores do sistema, como foi mostrado no trabalho decidimos utilizar 4 entidades : Tabuleiro, jogadores, casas e o dado. Além disso 
+	Começamos então a destrinchar cada entidade, os jogadores e dado são todos "iguais" e sem subtipos especiais, logo não nos aprofundamos em tipos de jogadores.
+	Porém, na entidade casa temos 2 tipos : Casas normais e casas especiais. As especiais também foram divididas em 2 subtipos : as que levam o jogador a outro local já definido (Cobras e escadas) e as que levam o jogador a outro destino de forma randômica. 
+	Já conversamos genericamente sobre os padrões que poderíamos utilizar no futuro, isso ajudou um pouco a ter uma visão mais ampla do que queríamos construir desde o início.
+
+				ETAPA 2
+	Após a definição de entidades e controladores decidimos fazer a criação de classes, métodos e atributos a fim de realizar as ligações entre as entidades e gerar um primeiro executável.
+	Após a execução, encontramos e consertamos alguns erros na lógica. Fizemos então a primeira refatoração a fim de encontrar erros de coesão, principalmente e erros de implementação.
+	Nessa etapa começamos a ter uma idéia mais clara de quais padrões realmente utilizar no sistema.
+
+				ETAPA 3
+	Passando essa etapa fizemos  a segunda refatoração a fim de desacoplar todo o sistema, realizando segregação de interfaces, definindo o uso correto do controladores, inversão de dependência e dividindo o sistema em pacotes por entidade. Além disso criamos uma nova entidada e pacote referente ao jogo propriamente dito, onde fizemos a definição de casas e jogadores e iniciamos o jogo.
+	Após esse momento, fizemos uma execução "final" da etapa para descobrir erros. Lembrando que a cada implementação nova fazíamos uma execuçã para não acumular erros. 
+
+				ETAPA 4
+	Apesar de realizar testes, pequenas e grandes refatorações durante todo o processo, decidimos nessa fase não implementar nada novo e focar na revisão e correção de tudo implementado até o momento. 
+	Refatoramos mais uma vez e deixamos o sistema "pronto" para receber a próxima etapa, onde implementamos os padrões de projeto da GoF.
+
+				ETAPA 5
+ 	Como dito antes, já tínhamos uma idéia mais clara de quais padrões utilizar, logo, nessa etapa decidimos implementá-los.
+	Utilizamos 4 padrões da GoF : Observer, Factory, Strategy e Singleton. Fizemos diversas refatorações ao implementá-los e até que tivemos uma menor dificuldade, visto que fizemos o sistema já com uma idéia dos padrões que iríamos implementar e quando fizemos isso o código já estava todo "pronto" apenas para recebar essa implementação.
+	Após essa fase o sistema já estava praticamente terminado, faltando apenas a inclusão da interface gráfica.
+
+			PADRÕES DE PROJETO UTILIZADOS
+Factory : Visto que a criação dos objetos (As casas) deve ficar próxima a quem sabe os dados (O tabuleiro), decidimos utilizar uma classe de fábrica para ter a responsabilidade de criação das casas. Definimos uma interface para criação de objetos( iFábricaCasas), permitindo que subclasses decidam quais classes serão instanciadas. Ou seja, de acordo com o tabuleiro a fábrica irá criar as casas necessárias para a forma que o tabuleiro possui. Quando a instância do tabuleiro for criada, será contruído, por meio do controlador de casas, uma fábrica de casas. Onde poderão ser criadas as casas necessárias para esse tabuleiro, no caso do sistema que fizemos : Casas normais, randômicas, cobra e escada.
+Singleton : Utilizamos singleton no tabuleiro, dado e no game, visto que são classes que precisam de apenas umas instância no sistema.O tabuleiro de acesso global, pois na classe de jogo, iremos fazer a definição de casas e jogadores no tabuleiro, e o dado que será instanciado apenas no tabuleiro na hora que o jogo estiver ocorrendo. 
+Strategy : No sistema possuímos classes relacionadas(Sorte e Revés) e elas diferem apenas no comportamento interno, visando isso decidimos criar a estratégia de qual queria utilizada na hora que um jogador cair na casa random e puxar uma carta. Ou seja, dentro da casa random possuímos um atributo "sorteRevés" do tipo iEstratégia, interface que é implementada pela casa revés e casa random.
+Observer : O observer é utilizado com intuito de notificar certos objetos quando outro objeto mudar de estado. Se baseando nisso, decidimos utilizar o padrão em 2 casos. O primeiro é na casa random, ela deve ser observada para quando algum jogador cair nela, saber que tem que puxar uma carta e receber a sorte ou revés. Como o jogador possui uma casa atual, quando o mesmo cair numa casa random, elá irá notificar o controlador de casa, que é o observador, que alguém caiu nela, visto isso, o controlador de casa altera seu estado "caiuNaRandom" para true e após isso notifica o jogador que ele caiu na casa random e que deve puxar uma carta para saber se foi sorte ou revés.
+No segundo caso, a rodada de jogo no tabuleiro deve ser observada para avisar a todos os jogadores que o jogo acabou quando algum jogador chegou na casa final. No caso o controlador de tabuleiro, quando estiver na execução da rodada, irá receber um retorno da casa destino que o jogador x irá após lançamento do dado. Caso esse retorno for a casa de número 100, o controlador de tabuleiro irá notificar ao jogo, que é o observador, que alguém chegou na casa 100. Feito isso, o método "jogoAcabou" irá modificar o status "jogoAtivo" do jogo para false e isso alertará aos jogadores que o jogo acabou e quem foi o vencedor.

@@ -1,0 +1,24 @@
+	ETAPA 1
+	Primeiramente decidimos definir as entidades e seus respectivos controladores do sistema, como foi mostrado no trabalho decidimos utilizar 4 entidades : Tabuleiro, jogadores, casas e o dado. Além disso 
+	Começamos então a destrinchar cada entidade, os jogadores e dado são todos "iguais" e sem subtipos especiais, logo não nos aprofundamos em tipos de jogadores.
+	Porém, na entidade casa temos 2 tipos : Casas normais e casas especiais. As especiais também foram divididas em 2 subtipos : as que levam o jogador a outro local já definido (Cobras e escadas) e as que levam o jogador a outro destino de forma randômica. 
+	Já conversamos genericamente sobre os padrões que poderíamos utilizar no futuro, isso ajudou um pouco a ter uma visão mais ampla do que queríamos construir desde o início.
+
+	ETAPA 2
+	Após a definição de entidades e controladores decidimos fazer a criação de classes, métodos e atributos a fim de realizar as ligações entre as entidades e gerar um primeiro executável.
+	Após a execução, encontramos e consertamos alguns erros na lógica. Fizemos então a primeira refatoração a fim de encontrar erros de coesão, principalmente e erros de implementação.
+	Nessa etapa começamos a ter uma idéia mais clara de quais padrões realmente utilizar no sistema.
+
+	ETAPA 3
+	Passando essa etapa fizemos  a segunda refatoração a fim de desacoplar todo o sistema, realizando segregação de interfaces, definindo o uso correto do controladores, inversão de dependência e dividindo o sistema em pacotes por entidade. Além disso criamos uma nova entidada e pacote referente ao jogo propriamente dito, onde fizemos a definição de casas e jogadores e iniciamos o jogo.
+	Após esse momento, fizemos uma execução "final" da etapa para descobrir erros. Lembrando que a cada implementação nova fazíamos uma execuçã para não acumular erros. 
+
+	ETAPA 4
+	Apesar de realizar testes, pequenas e grandes refatorações durante todo o processo, decidimos nessa fase não implementar nada novo e focar na revisão e correção de tudo implementado até o momento. 
+	Refatoramos mais uma vez e deixamos o sistema "pronto" para receber a próxima etapa, onde implementamos os padrões de projeto da GoF.
+
+	ETAPA 5
+ 	Como dito antes, já tínhamos uma idéia mais clara de quais padrões utilizar, logo, nessa etapa decidimos implementá-los.
+	Utilizamos 4 padrões da GoF : Observer, Factory, Strategy e Singleton. Fizemos diversas refatorações ao implementá-los e até que tivemos uma menor dificuldade, visto que fizemos o sistema já com uma idéia dos padrões que iríamos implementar e quando fizemos isso o código já estava todo "pronto" apenas para recebar essa implementação.
+	Após essa fase o sistema já estava praticamente terminado, faltando apenas a inclusão da interface gráfica.
+	
